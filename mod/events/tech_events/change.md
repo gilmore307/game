@@ -1,1 +1,0 @@
-remove building_munition_plants

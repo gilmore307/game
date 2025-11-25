@@ -1,4 +1,0 @@
-building_military_shipyards to building_hipyards
-
-principle_aggressive_coordination_3
-country_infamy_generation_mult = -0.15

@@ -1,9 +1,0 @@
-﻿munitions_production_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	building_arms_industry_throughput_add = 0.33
-}
-
-munitions_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	building_arms_industry_throughput_add = 0.15
-}

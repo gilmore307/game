@@ -1,1 +1,0 @@
-delete dp_take_treaty_port

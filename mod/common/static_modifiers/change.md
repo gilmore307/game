@@ -1,5 +1,0 @@
-﻿02_event_modifiers, content_1_modifiers
-building_munition_plants to building_arms_industry
-
-content_3_modifiers, content_4_modifiers
-building_military_shipyards to building_shipyards

@@ -1,9 +1,0 @@
-﻿decree_enlistment_efforts = {
-	texture = "gfx/interface/icons/decree/decree_enlistment_efforts.dds"			
-	cost = 0
-	
-	ai_weight = {
-		value = 0		
-	}
-}
-

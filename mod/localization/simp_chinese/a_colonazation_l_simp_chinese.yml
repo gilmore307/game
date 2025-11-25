@@ -1,7 +1,0 @@
-﻿l_simp_chinese:
-
- ##### MODIFIERS ######
- country_colonial_capacity_cap_add:0 "殖民地容量"
- country_colonial_capacity_cap_add_desc:0 " 可同时拥有的最大[Concept('concept_colony', '$concept_colonies$')]数量"
- COLONIAL_CAPACITY_TOOLTIP:0 "#tooltip_header $COLONIAL_CAPACITY$#!\n$TOOLTIP_DELIMITER$\n[GetPlayer.GetModifier.GetFullEntryDescFor('country_colonial_capacity_cap_add')]\n[GetPlayer.GetModifier.GetDescFor('country_colonial_capacity_cap_add')|0]$TOOLTIP_DELIMITER$\n[GetPlayer.GetColonialGrowthDetails]"
- COLONIES_VALUE:0 "[Subtract_CFixedPoint(GetPlayer.GetModifier.GetValueFor('country_colonial_capacity_cap_add'), GetPlayer.MakeScope.ScriptValue('num_active_colonies') )|+=0]"
