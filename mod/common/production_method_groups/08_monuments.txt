@@ -1,0 +1,129 @@
+﻿pmg_base_building_angkor_wat = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_angkor_wat
+	}
+}
+
+pmg_base_building_big_ben = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_big_ben
+	}
+}
+
+pmg_base_building_cristo_redentor = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_cristo_redentor
+	}
+}
+
+pmg_base_building_eiffel_tower = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_eiffel_tower
+	}
+}
+
+pmg_base_building_forbidden_city = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_forbidden_city
+	}
+}
+
+pmg_base_building_hagia_sophia = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_hagia_sophia
+	}
+}
+
+pmg_base_building_machu_picchu = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_machu_picchu
+	}
+}
+
+pmg_base_building_mosque_of_djenne = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_mosque_of_djenne
+	}
+}
+
+pmg_base_building_saint_basils_cathedral = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_saint_basils_cathedral
+	}
+}
+
+pmg_base_building_statue_of_liberty = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_statue_of_liberty
+	}
+}
+
+pmg_base_building_taj_mahal = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_taj_mahal
+	}
+}
+
+pmg_base_building_vatican_city = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_vatican_city
+	}
+}
+
+pmg_base_building_white_house = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+	is_hidden_when_unavailable = yes
+
+	production_methods = {
+		pm_default_building_white_house
+	}
+}

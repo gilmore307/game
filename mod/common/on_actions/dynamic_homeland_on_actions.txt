@@ -1,0 +1,82 @@
+﻿on_yearly_pulse_state = {
+	on_actions = {
+		dynamic_homeland_action
+	}
+}
+
+dynamic_homeland_action = {
+	trigger = {
+		state_have_dynamic_homeland = yes
+	}
+	effect = {
+		save_scope_as = state_scope
+		state_region = {
+			save_scope_as = region_scope
+		}
+		every_scope_culture = {
+			limit = {
+				culture_can_add_homeland = yes
+				scope:state_scope = {
+					culture_percent_state = {
+						target = prev
+						value >= add_homeland_threshold
+					}
+				}
+			}
+			save_scope_as = culture_scope
+			prev.state_region = {
+				add_homeland = prev
+				post_notification = add_homeland_notification
+			}
+		}
+		if = {
+			limit = {
+				is_split_state = no
+			}
+			every_scope_culture = {
+				limit = {
+					culture_can_remove_homeland = yes
+					scope:state_scope = {
+						culture_percent_state = {
+							target = prev
+							value < remove_homeland_threshold
+						}
+					}
+				}
+				save_scope_as = culture_scope
+				prev.state_region = {
+					remove_homeland = prev
+					post_notification = remove_homeland_notification
+				}
+				if = {
+					limit = {
+						cu:sulista ?= this
+						NOT = { any_state_region = { is_homeland = cu:sulista } }
+					}
+					c:BRZ ?= { set_variable = { name = sulistas_integrated } }
+				}
+				else_if = {
+					limit = {
+						cu:nordestino ?= this
+						NOT = { any_state_region = { is_homeland = cu:nordestino } }
+					}
+					c:BRZ ?= { set_variable = { name = nordestinos_integrated } }
+				}
+				else_if = {
+					limit = {
+						cu:amazonic ?= this
+						NOT = { any_state_region = { is_homeland = cu:amazonic } }
+					}
+					c:BRZ ?= { set_variable = { name = amazonics_integrated } }
+				}
+				else_if = {
+					limit = {
+						cu:paulista ?= this
+						NOT = { any_state_region = { is_homeland = cu:paulista } }
+					}
+					c:BRZ ?= { set_variable = { name = paulistas_integrated } }
+				}
+			}
+		}
+	}
+}

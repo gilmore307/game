@@ -1,0 +1,8 @@
+﻿institution_colonial_affairs = { # Max level from tech
+	icon = "gfx/interface/icons/institution_icons/colonization.dds"
+	background_texture = "gfx/interface/illustrations/institutions/colonization.dds"
+	modifier = {
+		state_colony_growth_creation_factor = 0.1
+		country_colonial_capacity_cap_add = 1
+	}
+}

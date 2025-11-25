@@ -1,0 +1,104 @@
+﻿je_white_house_site = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = white_house_var
+				add = 1
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+			any_scope_building = {
+					is_building_type = building_government_administration
+					level >= 20
+			}
+		}
+	}
+
+	on_complete = {
+		remove_modifier = white_house_survey
+		trigger_event = { id = white_house.1 } # site found
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+						is_building_type = building_government_administration
+						level >= 20
+				}
+			}
+			has_global_variable = angkor_wat_success_var
+			any_scope_building = {
+				is_building_type = building_angkor_wat
+			}
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = white_house_survey
+		remove_variable = white_house_var
+	}
+
+	current_value = {
+		value = root.var:white_house_var
+	}
+
+	goal_add_value = {
+		value = 1
+	}
+
+	progressbar = yes
+
+	weight = 10
+
+	should_be_pinned_by_default = yes
+}
+
+je_white_house_construction = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	complete = {
+		scope:target = {
+			any_scope_building = {
+				is_building_type = building_white_house
+				is_under_construction = no
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = white_house_site
+			}
+		}
+	}
+	
+	on_fail = {
+		remove_variable = white_house_var
+	}
+
+	on_complete = {
+		remove_global_variable = white_house_var
+		set_global_variable = white_house_success_var
+		scope:target = {
+			remove_modifier = white_house_site
+		}
+	}
+
+	should_be_pinned_by_default = yes
+}

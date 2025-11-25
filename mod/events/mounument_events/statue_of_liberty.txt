@@ -1,0 +1,49 @@
+﻿namespace = statue_of_liberty
+
+# Site identified
+statue_of_liberty.1 = {
+	type = country_event
+
+	title = statue_of_liberty.1.t
+	desc = statue_of_liberty.1.d
+	flavor = statue_of_liberty.1.f
+
+	placement = scope:statue_of_liberty_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_statue_of_liberty_site
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = statue_of_liberty_site
+		}
+	}
+
+	option = {
+		name = statue_of_liberty.1.a
+        	default_option = yes
+        	scope:statue_of_liberty_site = {
+        		add_modifier = {
+        			name = statue_of_liberty_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = statue_of_liberty_survey
+        	}
+        	add_journal_entry = {
+        		type = je_statue_of_liberty_construction
+        		target = scope:statue_of_liberty_site
+        	}
+	}
+}

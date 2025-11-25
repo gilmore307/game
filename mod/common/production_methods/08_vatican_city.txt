@@ -1,0 +1,21 @@
+﻿#arts academy
+pm_default_building_vatican_city = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			state_migration_pull_mult = 0.2
+			country_infamy_generation_mult = -0.2
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			building_government_administration_throughput_add = 0.05
+		}
+	}
+	building_modifiers = {
+		level_scaled = {
+			building_employment_shopkeepers_add = 500
+		}
+	}
+}

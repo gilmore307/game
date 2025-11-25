@@ -1,0 +1,19 @@
+﻿vatican_city_site = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+	building_construction_sector_throughput_add = 0.1
+}
+
+vatican_city_survey = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+	country_bureaucracy_add = -500
+}
+
+vatican_city_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 25
+}
+
+first_vatican_city_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_prestige_add = 50
+}

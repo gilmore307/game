@@ -1,0 +1,21 @@
+﻿#workplace_safety
+pm_default_building_eiffel_tower = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			state_working_adult_ratio_add = 0.2
+			building_minimum_wage_mult = 0.2
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			building_government_administration_throughput_add = 0.05
+		}
+	}
+	building_modifiers = {
+		level_scaled = {
+			building_employment_machinists_add = 500s
+		}
+	}
+}

@@ -1,0 +1,104 @@
+﻿je_forbidden_city_site = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = forbidden_city_var
+				add = 1
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+			any_scope_building = {
+				is_building_type = building_barracks
+				level >= 100
+			}
+		}
+	}
+
+	on_complete = {
+		remove_modifier = forbidden_city_survey
+		trigger_event = { id = forbidden_city.1 } # site found
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+					is_building_type = building_barracks
+					level >= 100
+				}
+			}
+			has_global_variable = forbidden_city_success_var
+			any_scope_building = {
+				is_building_type = building_forbidden_city
+			}
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = forbidden_city_survey
+		remove_variable = forbidden_city_var
+	}
+
+	current_value = {
+		value = root.var:forbidden_city_var
+	}
+
+	goal_add_value = {
+		value = 1
+	}
+
+	progressbar = yes
+
+	weight = 10
+
+	should_be_pinned_by_default = yes
+}
+
+je_forbidden_city_construction = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	complete = {
+		scope:target = {
+			any_scope_building = {
+				is_building_type = building_forbidden_city
+				is_under_construction = no
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = forbidden_city_site
+			}
+		}
+	}
+	
+	on_fail = {
+		remove_variable = forbidden_city_var
+	}
+
+	on_complete = {
+		remove_global_variable = forbidden_city_var
+		set_global_variable = forbidden_city_success_var
+		scope:target = {
+			remove_modifier = forbidden_city_site
+		}
+	}
+
+	should_be_pinned_by_default = yes
+}

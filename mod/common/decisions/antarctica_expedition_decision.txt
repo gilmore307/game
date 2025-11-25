@@ -1,0 +1,94 @@
+﻿antarctica_expedition = {
+	is_shown = {
+		NOT = { has_global_variable = south_pole_reached }	
+		NOT = { has_variable = on_expedition }	
+		OR = {
+			is_ai = no
+			NOT = { has_variable = ai_expedition_cooldown }
+		}
+		institution_investment_level = {
+			institution = institution_colonial_affairs
+			value >= 3
+		}
+	}
+
+	possible = {
+		is_at_war = no
+		has_interest_marker_in_region = region_la_plata
+		any_scope_character = {
+			has_role = admiral
+			count >= 3
+		}
+		institution_investment_level = {
+			institution = institution_colonial_affairs
+			value >= 3
+		}
+		calc_true_if = {
+			amount >= 3
+			owns_entire_state_region = STATE_RIO_NEGRO
+			owns_entire_state_region = STATE_LA_PAMPA
+			owns_entire_state_region = STATE_SANTA_FE
+			owns_entire_state_region = STATE_CORRIENTES
+			owns_entire_state_region = STATE_TUCUMAN
+			owns_entire_state_region = STATE_CHACO
+			owns_entire_state_region = STATE_BUENOS_AIRES
+			owns_entire_state_region = STATE_ALTO_PARAGUAY
+			owns_entire_state_region = STATE_BAJO_PARAGUAY
+			owns_entire_state_region = STATE_SOUTH_ATLANTIC_ISLANDS
+			owns_entire_state_region = STATE_LOS_RIOS
+			owns_entire_state_region = STATE_ARAUCANIA
+			owns_entire_state_region = STATE_PATAGONIA
+			owns_entire_state_region = STATE_SANTIAGO
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = {
+				is_player = yes
+			}
+			trigger_event = { id = cold.101 popup = yes }
+			set_variable = {
+				name = on_expedition
+				value = yes
+			}
+		}
+		else = {
+			set_variable = AI_EXPEDITION_ANTARCTICA
+			ai_expedition_simulator_start = yes
+		}
+		hidden_effect = {
+			set_variable = {
+				name = ai_expedition_cooldown
+				value = yes
+				days = 1825
+			}		
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				weekly_net_fixed_income > money_amount_multiplier_medium
+				gold_reserves > 0
+			}
+			add = 1
+		}
+		if = {
+			limit = {
+				has_strategy = ai_strategy_armed_isolationism
+			}
+			multiply = 0
+		}
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			multiply = 0
+		}
+	}
+}

@@ -1,0 +1,81 @@
+﻿l_simp_chinese:
+
+ goods_input_services_add: "@services!服务投入"
+ goods_input_services_add_desc: "建筑消费的@services!服务数量"
+
+ pharmaceuticals: "药品"
+ goods_output_pharmaceuticals_add: "@pharmaceuticals!药品产出"
+ goods_output_pharmaceuticals_add_desc: "建筑产出的@books!药品数量"
+ goods_input_pharmaceuticals_add: "@pharmaceuticals!药品投入"
+ goods_input_pharmaceuticals_add_desc: "建筑消费的@books!药品数量"
+ trade_route_import_lens_option_pharmaceuticals_tooltip: "建立一条进口$pharmaceuticals$的贸易路线"
+ trade_route_export_lens_option_pharmaceuticals_tooltip: "建立一条出口$pharmaceuticals$的贸易路线"
+
+ books: "书籍"
+ goods_output_books_add: "@books!书籍产出"
+ goods_output_books_add_desc: "建筑产出的@books!书籍数量"
+ trade_route_import_lens_option_books_tooltip: "建立一条进口$books$的贸易路线"
+ trade_route_export_lens_option_books_tooltip: "建立一条出口$books$的贸易路线"
+
+ newspapers: "报纸"
+ goods_output_newspapers_add: "@newspapers!报纸产出"
+ goods_output_newspapers_add_desc: "建筑产出的@newspapers!报纸数量"
+ goods_input_newspapers_add: "@newspapers!报纸投入"
+ goods_input_newspapers_add_desc: "建筑消费的@newspapers!报纸数量"
+ trade_route_export_lens_option_newspapers_tooltip:0 "建立一条出口$newspapers$的贸易路线"
+ trade_route_import_lens_option_newspapers_tooltip:0 "建立一条进口$newspapers$的贸易路线"
+
+ pm_no_hardwood: "专注软木生产"
+ pm_hardwood: "优先软木生产"
+ pm_more_hardwood: "优先硬木生产"
+
+ building_port: "多功能港"
+
+ building_airport: "空港"
+ pmg_base_building_airport: "空港"
+ pm_hot_air_balloon: "热气球泊位"
+ pm_airship_transport: "飞艇泊位"
+ pm_aeroplane_transport: "机场"
+
+ modifier_state_building_airport_max_level_add: "空港最大等级"
+ modifier_state_building_airport_max_level_add_desc: "对$building_airport$建筑最大等级的增益或惩罚。"
+ state_building_airport_max_level_add: "$building_airport$最大等级"
+ state_building_airport_max_level_add_desc: "对$building_airport$建筑最大等级的增益或惩罚。"
+
+ building_war_machine_industry: "载具厂"
+ pmg_automobile_production: "汽车"
+ pmg_aeroplanes: "飞机"
+ pm_less_automobile_production: "蒸汽汽车生产"
+ pm_automobile_production: "电力汽车生产"
+ pm_more_automobile_production: "燃油汽车生产"
+ pm_aeroplane_disabled: "专注汽车生产"
+
+ building_skyscraper: "市民服务机构"
+ pmg_base_building_skyscraper: "基础"
+ pm_skyscraper_bureaucratic_nexus: "市民服务"
+
+ building_victoria_terminus: "市场监管机构"
+
+ building_power_bloc_statue: "外交宣传机构"
+
+ building_synthetics_plants: "制药厂"
+ pmg_synthetic_medicine: "基础"
+ pm_traditional_medicine: "传统医药"
+ pm_chemical_synthesis: "化学合成"
+ pm_bioreactor: "生物制药"
+
+ popneed_medication: "医疗"
+ popneed_education: "教育"
+
+ building_investment_bureau: "国家投资局"
+ TOTAL_INVESTMENT_BUREAU: "[GetBuildingType('building_investment_bureau').GetName]规模"
+ pmg_ownership_building_investment_bureau: "所有制"
+ pm_investment_bureau: "政府统筹"
+
+ building_industrial_zone: "高新产业园"
+ TOTAL_INDUSTRIAL_ZONE: "[GetBuildingType('building_industrial_zone').GetName]规模"
+ pmg_ownership_building_industrial_zone: "所有制"
+ pm_industrial_zone: "技术驱动"
+
+ decree_enlistment_efforts: "产业调整"
+ decree_enlistment_efforts_desc: "配合决议以调整该地区产业结构"

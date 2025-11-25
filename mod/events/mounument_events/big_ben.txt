@@ -1,0 +1,57 @@
+﻿namespace = big_ben
+
+# Site identified
+big_ben.1 = {
+	type = country_event
+
+	title = big_ben.1.t
+	desc = big_ben.1.d
+	flavor = big_ben.1.f
+
+	placement = scope:big_ben_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_big_ben_site
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+					is_building_type = building_financial_district
+					level >= 1000
+				}
+			}
+			save_scope_as = big_ben_site
+		}
+	}
+
+	option = {
+		name = big_ben.1.a
+        	default_option = yes
+        	scope:big_ben_site = {
+        		add_modifier = {
+        			name = big_ben_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = big_ben_survey
+        	}
+        	add_journal_entry = {
+        		type = je_big_ben_construction
+        		target = scope:big_ben_site
+        	}
+	}
+}

@@ -1,0 +1,73 @@
+﻿angkor_wat_decision = {
+	is_shown = {
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_angkor_wat
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_modifier = angkor_wat_survey
+			}
+		}
+		NOT = {
+			has_variable = angkor_wat_var
+		}
+		NOT = { 
+			has_global_variable = angkor_wat_success_var
+		}
+	}
+
+	possible = {
+		produced_bureaucracy > 500
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+		}
+		institution_investment_level = {
+			institution = institution_home_affairs
+			value >= 5
+		}
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = angkor_wat_var
+			value = 0
+		}
+		add_modifier = {
+			name = angkor_wat_survey
+			months = 12
+		}
+		add_journal_entry = {
+			type = je_angkor_wat_site
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { produced_bureaucracy > 500 }
+			add = 5
+		}	
+		if = {
+			limit = { 
+				produced_bureaucracy > 5000 
+				any_country = {
+					is_ai = no
+					has_variable = angkor_wat_var
+				}
+			}
+			add = 50
+		}			
+		if = {
+			limit = { 
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			add = -1000
+		}	
+	}
+}

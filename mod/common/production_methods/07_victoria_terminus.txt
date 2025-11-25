@@ -1,0 +1,27 @@
+﻿pm_default_building_victoria_terminus = {
+	texture = "gfx/interface/icons/production_method_icons/skyscraper_trade_nexus.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_prestige_add = 10
+		}
+	}
+
+	state_modifiers = {
+		workforce_scaled = {
+			state_market_access_price_impact = 0.05
+		}
+	}
+
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_transportation_add = 50
+		}	
+		level_scaled = {
+			building_employment_laborers_add = 200
+			building_employment_machinists_add = 200
+			building_employment_clerks_add = 100
+		}
+	}
+}

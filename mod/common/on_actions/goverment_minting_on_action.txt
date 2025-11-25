@@ -1,0 +1,150 @@
+﻿# Root = State
+on_monthly_pulse_state = {
+	on_actions = {
+		goverment_minting_on_action
+	}
+}
+
+goverment_minting_on_action = {
+    effect = {
+       set_variable = {
+			name = transportation_minting
+			value = sg:transportation.state_goods_pricier 
+		}
+		change_variable = {
+			name = transportation_minting
+			add = 1
+		}
+		change_variable = {
+			name = transportation_minting
+			multiply = sg:transportation.state_goods_production
+		}
+		change_variable = {
+			name = transportation_minting
+			multiply = 30
+		}
+        
+        set_variable = {
+			name = newspapers_minting
+			value = sg:newspapers.state_goods_pricier 
+		}
+		change_variable = {
+			name = newspapers_minting
+			add = 1
+		}
+		change_variable = {
+			name = newspapers_minting
+			multiply = sg:newspapers.state_goods_production
+		}
+		change_variable = {
+			name = newspapers_minting
+			multiply = 40
+		}
+
+       set_variable = {
+			name = services_minting
+			value = sg:services.state_goods_pricier 
+		}
+		change_variable = {
+			name = services_minting
+			add = 1
+		}
+		change_variable = {
+			name = services_minting
+			multiply = sg:services.state_goods_production
+		}
+		change_variable = {
+			name = services_minting
+			multiply = 30
+		}
+
+        set_variable = {
+			name = electricity_minting
+			value = sg:electricity.state_goods_pricier 
+		}
+		change_variable = {
+			name = electricity_minting
+			add = 1
+		}
+		change_variable = {
+			name = electricity_minting
+			multiply = sg:electricity.state_goods_production
+		}
+		change_variable = {
+			name = electricity_minting
+			multiply = 30
+		}
+
+        set_variable = {
+			name = books_minting
+			value = sg:books.state_goods_pricier 
+		}
+		change_variable = {
+			name = books_minting
+			add = 1
+		}
+		change_variable = {
+			name = books_minting
+			multiply = sg:books.state_goods_production
+		}
+		change_variable = {
+			name = books_minting
+			multiply = 80
+		}
+
+        set_variable = {
+			name = fine_art_minting
+			value = sg:fine_art.state_goods_pricier 
+		}
+		change_variable = {
+			name = fine_art_minting
+			add = 1
+		}
+		change_variable = {
+			name = fine_art_minting
+			multiply = sg:fine_art.state_goods_production
+		}
+		change_variable = {
+			name = fine_art_minting
+			multiply = 200
+		}
+
+        set_variable = {
+			name = total_minting
+			value = var:transportation_minting
+		}
+		change_variable = {
+			name = total_minting
+			add = var:newspapers_minting
+		}
+        change_variable = {
+			name = total_minting
+			add = var:services_minting
+		}
+        change_variable = {
+			name = total_minting
+			add = var:electricity_minting
+		}
+        change_variable = {
+			name = total_minting
+			add = var:books_minting
+		}
+        change_variable = {
+			name = total_minting
+			add = var:fine_art_minting
+		}
+
+		if = {
+			limit = {
+				var:total_minting > 0
+			}
+			owner = {
+				add_modifier = {
+					name = country_government_minting_modifier
+					multiplier = var:total_minting
+					months = 1
+				}
+			}
+		}
+    }
+}

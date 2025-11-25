@@ -1,0 +1,104 @@
+﻿je_big_ben_site = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = big_ben_var
+				add = 1
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+		}
+		any_scope_building = {
+				is_building_type = building_financial_district
+				level >= 1000
+		}
+	}
+
+	on_complete = {
+		remove_modifier = big_ben_survey
+		trigger_event = { id = big_ben.1 } # site found
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+					is_building_type = building_financial_district
+					level >= 1000
+				}
+			}
+			has_global_variable = big_ben_success_var
+			any_scope_building = {
+				is_building_type = building_big_ben
+			}
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = big_ben_survey
+		remove_variable = big_ben_var
+	}
+
+	current_value = {
+		value = root.var:big_ben_var
+	}
+
+	goal_add_value = {
+		value = 1
+	}
+
+	progressbar = yes
+
+	weight = 10
+
+	should_be_pinned_by_default = yes
+}
+
+je_big_ben_construction = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	complete = {
+		scope:target = {
+			any_scope_building = {
+				is_building_type = building_big_ben
+				is_under_construction = no
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = big_ben_site
+			}
+		}
+	}
+	
+	on_fail = {
+		remove_variable = big_ben_var
+	}
+
+	on_complete = {
+		remove_global_variable = big_ben_var
+		set_global_variable = big_ben_success_var
+		scope:target = {
+			remove_modifier = big_ben_site
+		}
+	}
+
+	should_be_pinned_by_default = yes
+}

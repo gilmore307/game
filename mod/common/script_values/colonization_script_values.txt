@@ -1,0 +1,29 @@
+﻿num_active_colonies = {
+	value = {
+		value = 0
+		if = {
+			limit = {
+				has_colonial_growth = yes
+			}
+			every_scope_state = {
+				limit = { 
+					is_under_colonization = yes
+				}
+				add = 1
+			}
+		}
+	}
+}
+
+state_region_num_provinces_half = {
+	value = {
+		every_state = {
+			limit = {
+				state_region = root.state_region
+			}
+			add = num_provinces
+		}
+		multiply = 0.5
+		round = yes
+	}
+}

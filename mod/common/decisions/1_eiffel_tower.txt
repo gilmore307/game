@@ -1,0 +1,74 @@
+﻿eiffel_tower_decision = {
+	is_shown = {
+		has_technology_researched = steel_frame_buildings
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_eiffel_tower
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_modifier = eiffel_tower_survey
+			}
+		}
+		NOT = {
+			has_variable = eiffel_tower_var
+		}
+		NOT = {
+			has_global_variable = eiffel_tower_success_var
+		}
+	}
+
+	possible = {	
+		produced_bureaucracy > 500
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+		}
+		institution_investment_level = {
+				institution = institution_workplace_safety
+				value >= 5
+		}
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = eiffel_tower_var
+			value = 0
+		}
+		add_modifier = {
+			name = eiffel_tower_survey
+			months = 12
+		}
+		add_journal_entry = {
+			type = je_eiffel_tower_site
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { produced_bureaucracy > 500 }
+			add = 5
+		}	
+		if = {
+			limit = { 
+				produced_bureaucracy > 5000 
+				any_country = {
+					is_ai = no
+					has_variable = eiffel_tower_var
+				}
+			}
+			add = 50
+		}			
+		if = {
+			limit = {
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			add = -1000
+		}	
+	}
+}

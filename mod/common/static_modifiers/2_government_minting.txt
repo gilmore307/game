@@ -1,0 +1,4 @@
+﻿country_government_minting_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+	country_minting_add = 1
+}

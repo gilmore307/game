@@ -1,0 +1,49 @@
+﻿namespace = eiffel_tower
+
+# Site identified
+eiffel_tower.1 = {
+	type = country_event
+
+	title = eiffel_tower.1.t
+	desc = eiffel_tower.1.d
+	flavor = eiffel_tower.1.f
+
+	placement = scope:eiffel_tower_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_eiffel_tower_site
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = eiffel_tower_site
+		}
+	}
+
+	option = {
+		name = eiffel_tower.1.a
+        	default_option = yes
+        	scope:eiffel_tower_site = {
+        		add_modifier = {
+        			name = eiffel_tower_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = eiffel_tower_survey
+       		}
+        	add_journal_entry = {
+        		type = je_eiffel_tower_construction
+        		target = scope:eiffel_tower_site
+        	}
+	}
+}

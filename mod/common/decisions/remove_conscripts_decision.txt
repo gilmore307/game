@@ -1,0 +1,26 @@
+﻿remove_conscripts_decision = {
+
+	is_shown = {
+		any_scope_state = {
+			has_decree = decree_enlistment_efforts
+			has_building = building_conscription_center
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			has_decree = decree_enlistment_efforts
+			has_building = building_conscription_center
+		}
+	}
+
+	when_taken = {
+		every_scope_state = {
+			limit = {
+				has_decree = decree_enlistment_efforts
+				has_building = building_conscription_center
+			}
+			remove_building = building_conscription_center
+		}
+	}
+}

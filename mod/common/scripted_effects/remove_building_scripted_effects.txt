@@ -1,0 +1,35 @@
+﻿remove_building_effect = {
+	if = {
+		limit = {
+			any_scope_building = {
+				is_building_type = $building_1$
+				is_subsidized = yes
+			}
+		}
+		random_scope_building = {
+			limit = {
+				is_building_type = $building_1$
+				is_subsidized = yes
+			}
+			owner = {
+				add_treasury = {
+					add = $construction_cost$
+					multiply = 500
+					multiply = prev.level
+					if = {
+						limit = {
+							prev.state = {
+								OR = {
+									has_modifier = recently_conquered_state
+									has_modifier = recently_liberated_state
+								}
+							}
+						}
+						multiply = 0.25
+					}
+				}
+			}
+		}
+		remove_building = $building_1$
+	}	
+}

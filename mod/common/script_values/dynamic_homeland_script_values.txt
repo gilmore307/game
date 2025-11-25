@@ -1,0 +1,33 @@
+﻿homeland_threshold_low = 0.1
+homeland_threshold_medium = 0.2
+homeland_threshold_high = 0.4
+# for other mod
+add_homeland_threshold_bonus = 0
+remove_homeland_threshold_bonus = 0
+
+add_homeland_threshold = {
+	value = homeland_threshold_high
+	subtract = add_homeland_threshold_bonus
+	max = 1
+	min = 0.01
+}
+
+remove_homeland_threshold = {
+	value = homeland_threshold_medium
+	add = remove_homeland_threshold_bonus
+	max = 1
+	min = 0.01
+}
+
+# state
+population_ratio_in_state_region = {
+	value = state_population
+	divide = {
+		value = 0
+		state_region = {
+			every_scope_state = {
+				add = state_population
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+decree_events_02
+remove building_munition_plants
+
+belle_epoque_events.txt
+remove belle_epoque_events.1
+eiffel_tower

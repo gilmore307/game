@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+
+ building_arms_industry: "轻武器厂"
+ pmg_base_building_munition_plants: "弹药"
+ pmg_firearms_manufacturing: "枪械"
+ pm_armor_piercing: "穿甲弹"
+ pm_rocket_projectile: "火箭弹"
+
+ building_artillery_foundries: "重武器厂"
+ pmg_foundries: "火炮"
+ pm_no_tank_production: "专注火炮生产"
+ pm_less_tank_production: "优先火炮生产"
+ pm_tank_production: "优先坦克生产"
+ pm_more_tank_production: "大规模坦克生产"
+
+ remove_building_decision:0 "调整产业结构"
+ remove_building_decision_desc:0 "在拥有法令$decree_enlistment_efforts$的地区移除受国家补贴的建筑"
+
+ remove_conscripts_decision: "撤除征兵中心"
+ remove_conscripts_decision_desc: "在拥有法令$decree_enlistment_efforts$的地区移除征兵中心"

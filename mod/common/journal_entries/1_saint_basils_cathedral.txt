@@ -1,0 +1,104 @@
+﻿je_saint_basils_cathedral_site = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	on_monthly_pulse = {
+		effect = {
+			change_variable = {
+				name = saint_basils_cathedral_var
+				add = 1
+			}
+		}
+	}
+
+	complete = {
+		scope:journal_entry = { is_goal_complete = yes }
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+			any_scope_building = {
+				is_building_type = building_university
+				level >= 20
+			}
+		}
+	}
+
+	on_complete = {
+		remove_modifier = saint_basils_cathedral_survey
+		trigger_event = { id = saint_basils_cathedral.1 } # site found
+	}
+
+	invalid = {
+		NOT = {
+			any_scope_state = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+					is_building_type = building_university
+					level >= 20
+				}
+			}
+			has_global_variable = saint_basils_cathedral_success_var
+			any_scope_building = {
+				is_building_type = building_saint_basils_cathedral
+			}
+		}
+	}
+
+	on_invalid = {
+		remove_modifier = saint_basils_cathedral_survey
+		remove_variable = saint_basils_cathedral_var
+	}
+
+	current_value = {
+		value = root.var:saint_basils_cathedral_var
+	}
+
+	goal_add_value = {
+		value = 1
+	}
+
+	progressbar = yes
+
+	weight = 10
+
+	should_be_pinned_by_default = yes
+}
+
+je_saint_basils_cathedral_construction = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_technology
+
+	complete = {
+		scope:target = {
+			any_scope_building = {
+				is_building_type = building_saint_basils_cathedral
+				is_under_construction = no
+			}
+		}
+	}
+
+	fail = {
+		NOT = {
+			any_scope_state = {
+				has_modifier = saint_basils_cathedral_site
+			}
+		}
+	}
+	
+	on_fail = {
+		remove_variable = saint_basils_cathedral_var
+	}
+
+	on_complete = {
+		remove_global_variable = saint_basils_cathedral_var
+		set_global_variable = saint_basils_cathedral_success_var
+		scope:target = {
+			remove_modifier = saint_basils_cathedral_site
+		}
+	}
+
+	should_be_pinned_by_default = yes
+}

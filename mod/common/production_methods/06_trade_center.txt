@@ -1,0 +1,65 @@
+﻿pm_trade_center = {
+	texture = "gfx/interface/icons/production_method_icons/trade_center.dds"
+	
+	state_modifiers = {
+		workforce_scaled = {
+			state_market_access_price_impact = 0.001
+		}
+	}
+}
+
+pm_trade_center_trade_quantity_normal = {
+	texture = "gfx/interface/icons/production_method_icons/trade_quantity_2.dds"
+	is_default = yes
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_merchant_marine_add = 4
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_market_access_price_impact = 0.001
+		}
+	}
+}
+
+pm_trade_center_trade_quantity_high = {
+	texture = "gfx/interface/icons/production_method_icons/trade_quantity_3.dds"
+
+	unlocking_technologies = { hydraulic_cranes }
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_merchant_marine_add = 5
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_market_access_price_impact = 0.002
+		}
+		unscaled = {
+			state_trade_quantity_mult = 0.5
+		}
+	}
+}
+
+pm_trade_center_trade_quantity_very_high = {
+	texture = "gfx/interface/icons/production_method_icons/trade_quantity_4.dds"
+
+	unlocking_technologies = { floating_harbor }
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_merchant_marine_add = 6
+		}
+	}
+	state_modifiers = {
+		workforce_scaled = {
+			state_market_access_price_impact = 0.003
+		}
+		unscaled = {
+			state_trade_quantity_mult = 1.0
+		}
+	}
+}

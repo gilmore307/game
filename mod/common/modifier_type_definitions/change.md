@@ -1,0 +1,2 @@
+01_building_modifier_types
+delete manowars, ironclads, building_munition_plants, building_military_shipyards

@@ -1,0 +1,5 @@
+﻿autonom_investment_trigger = {
+	trigger_if = {
+		has_building = $building_1$
+	}
+}

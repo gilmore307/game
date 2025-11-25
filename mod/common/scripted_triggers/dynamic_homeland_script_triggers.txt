@@ -1,0 +1,26 @@
+﻿state_have_dynamic_homeland = {
+	owner = { is_ai = yes }
+
+	state_population >= 10000
+	OR = {
+		is_split_state = no
+		AND = {
+			is_largest_state_in_region = yes
+			population_ratio_in_state_region >= 0.66
+		}
+	}
+}
+
+culture_can_add_homeland = {
+	save_temporary_scope_as = culture_scope
+	scope:region_scope = { NOT = { is_homeland = prev } }
+	is_primary_culture_of = scope:state_scope.owner
+
+}
+
+culture_can_remove_homeland = {
+	scope:region_scope = { is_homeland = prev }
+	NOT = {
+		is_primary_culture_of = scope:state_scope.owner
+	}
+}

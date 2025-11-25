@@ -1,0 +1,57 @@
+﻿namespace = saint_basils_cathedral
+
+# Site identified
+saint_basils_cathedral.1 = {
+	type = country_event
+
+	title = saint_basils_cathedral.1.t
+	desc = saint_basils_cathedral.1.d
+	flavor = saint_basils_cathedral.1.f
+
+	placement = scope:saint_basils_cathedral_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_saint_basils_cathedral_site
+	}
+
+	immediate = {
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				is_split_state = no
+				any_scope_building = {
+					is_building_type = building_university
+					level >= 20
+				}
+			}
+			save_scope_as = saint_basils_cathedral_site
+		}
+	}
+
+	option = {
+		name = saint_basils_cathedral.1.a
+        	default_option = yes
+        	scope:saint_basils_cathedral_site = {
+        		add_modifier = {
+        			name = saint_basils_cathedral_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = saint_basils_cathedral_survey
+       		}
+        	add_journal_entry = {
+        		type = je_saint_basils_cathedral_construction
+        		target = scope:saint_basils_cathedral_site
+        	}
+	}
+}

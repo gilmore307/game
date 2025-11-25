@@ -1,0 +1,10 @@
+﻿pmg_base_building_airport = {
+	texture = "gfx/interface/icons/generic_icons/mixed_icon_base.dds"
+	ai_selection = most_productive
+
+	production_methods = {
+		pm_hot_air_balloon
+		pm_airship_transport
+		pm_aeroplane_transport
+	}
+}

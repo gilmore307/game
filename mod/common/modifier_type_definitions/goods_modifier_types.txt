@@ -1,0 +1,55 @@
+﻿goods_input_newspapers_add = {
+	decimals=0
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_newspapers_add = {
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_pharmaceuticals_add = {
+	decimals=0
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_pharmaceuticals_add = {
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_books_add = {
+	decimals=0
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_books_add = {
+	decimals=0
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_services_add = {
+	decimals=0
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}

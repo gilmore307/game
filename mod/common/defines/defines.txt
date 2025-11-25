@@ -1,0 +1,22 @@
+﻿NGame = {
+	MAX_NUMBER_OF_AUTOSAVES = 10 	# The game will only keep the MAX_NUMBER_OF_AUTOSAVES latest autosaves.
+}
+
+NCountry = {
+	INCORPORATION_TIME_SAME_CULTURE = 1				# Years if the state is a Homeland of one of the country's primary cultures
+	INCORPORATION_TIME_SAME_HERITAGE = 2			# Years if the state is a Homeland of a culture that matches of one of the country's primary cultures' Heritage traits
+	INCORPORATION_TIME_SAME_TRAIT = 5				# Years if the state is a Homeland of a culture with any trait in common with a country's primary cultures
+	INCORPORATION_TIME_NO_MATCH = 10				# Years if the state's Homeland cultures have nothing in common with the country's primary cultures
+}
+
+NEconomy = {
+	BASE_RESOURCE_DISCOVER_CHANCE = 0.2 		# Per day (1.0 = 1%)
+}
+
+NDiplomacy = {
+	COLONY_PROVINCE_COASTAL_SCORE = 1000 # Replaces COLONY_BASE_SCORE for provinces with a coastline
+}
+
+NPops = {
+	MIN_BASE_COLONIAL_GROWTH = 0.05					# Country base colonial growth from population cannot be lower than this
+}

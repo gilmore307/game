@@ -1,0 +1,73 @@
+﻿forbidden_city_decision = {
+	is_shown = {
+		NOT = {
+			any_scope_building = {
+				is_building_type = building_forbidden_city
+			}
+		}
+		NOT = {
+			any_scope_state = {
+				has_modifier = forbidden_city_survey
+			}
+		}
+		NOT = {
+			has_variable = forbidden_city_var
+		}
+		NOT = {
+			has_global_variable = forbidden_city_success_var
+		}
+	}
+
+	possible = {	
+		produced_bureaucracy > 500
+		any_scope_state = {
+			is_incorporated = yes
+			is_split_state = no
+			any_scope_building = {
+				is_building_type = building_barracks
+				level >= 100
+			}
+		}
+	}
+	
+	when_taken = {
+		set_variable = {
+			name = forbidden_city_var
+			value = 0
+		}
+		add_modifier = {
+			name = forbidden_city_survey
+			months = 12
+		}
+		add_journal_entry = {
+			type = je_forbidden_city_site
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = { produced_bureaucracy > 500 }
+			add = 5
+		}	
+		if = {
+			limit = { 
+				produced_bureaucracy > 5000 
+				any_country = {
+					is_ai = no
+					has_variable = forbidden_city_var
+				}
+			}
+			add = 50
+		}			
+		if = {
+			limit = { 
+				OR = {
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}
+			}
+			add = -1000
+		}	
+	}
+}

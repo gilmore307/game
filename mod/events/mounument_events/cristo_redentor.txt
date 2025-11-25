@@ -1,0 +1,49 @@
+﻿namespace = cristo_redentor
+
+# Site identified
+cristo_redentor.3 = {
+	type = country_event
+
+	title = cristo_redentor.3.t
+	desc = cristo_redentor.3.d
+	flavor = cristo_redentor.3.f
+
+	placement = scope:cristo_redentor_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_cristo_redentor_site
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = cristo_redentor_site
+		}
+	}
+
+	option = {
+		name = cristo_redentor.3.a
+        	default_option = yes
+        	scope:cristo_redentor_site = {
+        		add_modifier = {
+        			name = cristo_redentor_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = cristo_redentor_survey
+        	}
+        	add_journal_entry = {
+        		type = je_cristo_redentor_construction
+        		target = scope:cristo_redentor_site
+        	}
+	}
+}

@@ -1,0 +1,15 @@
+﻿pm_industrial_zone = {
+	texture = "gfx/interface/icons/production_method_icons/ownership_academics.dds"
+	
+	building_modifiers = { 
+		level_scaled = {
+			building_employment_academics_add = 25
+			building_employment_capitalists_add = 25
+			building_employment_engineers_add = 50
+		}
+		unscaled = {
+			building_academics_shares_add = 5
+			building_capitalists_shares_add = 10
+		}
+	}
+}

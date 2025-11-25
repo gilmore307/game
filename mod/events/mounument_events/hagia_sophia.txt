@@ -1,0 +1,49 @@
+﻿namespace = hagia_sophia
+
+# Site identified
+hagia_sophia.1 = {
+	type = country_event
+
+	title = hagia_sophia.1.t
+	desc = hagia_sophia.1.d
+	flavor = hagia_sophia.1.f
+
+	placement = scope:hagia_sophia_site
+
+	event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	duration = 3
+
+	trigger = {
+		# triggered by je_hagia_sophia_site
+	}
+
+	immediate = {
+		capital = {
+			save_scope_as = hagia_sophia_site
+		}
+	}
+
+	option = {
+		name = hagia_sophia.1.a
+        	default_option = yes
+        	scope:hagia_sophia_site = {
+        		add_modifier = {
+        			name = hagia_sophia_site
+        		}
+        	}
+        	show_as_tooltip = {
+        		remove_modifier = hagia_sophia_survey
+        	}
+        	add_journal_entry = {
+        		type = je_hagia_sophia_construction
+        		target = scope:hagia_sophia_site
+        	}
+	}
+}

@@ -1,0 +1,8 @@
+﻿country_colonial_capacity_cap_add={
+	decimals=0
+	color=good
+	percent=no
+	game_data={
+		ai_value=20
+	}
+}

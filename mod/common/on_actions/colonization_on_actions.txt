@@ -1,0 +1,61 @@
+﻿# Root = State
+on_monthly_pulse_state = {
+	on_actions = {
+		colonial_progress_claim_check_on_action
+	}
+}
+
+colonial_progress_claim_check_on_action = {
+	effect = {
+		if = {
+			limit = {
+				owner = {
+					institution_investment_level = {
+						institution = institution_colonial_affairs
+						value >= 3
+					}
+					NOT = { has_claim = root.state_region}
+				}
+				state_is_colony = yes
+				num_provinces >= state_region_num_provinces_half
+				state_is_colonizable_state = yes
+			} 
+			state_region = {
+				add_claim = root.owner
+			}
+		}
+	}
+}
+
+# Root = Colony state
+on_colony_created = {
+	on_actions = {
+		max_colonial_capacity_on_action
+	}
+}
+# Check if we are eligible for a colony
+max_colonial_capacity_on_action = {
+	effect = {
+		if = {
+			limit = {
+				root.owner = {
+					country_is_colonial_capped = yes
+					is_diplomatic_play_committed_participant = yes
+					is_at_war = yes
+				}					
+			}
+			random_neighbouring_state = {
+				limit = {
+					state_region = root.state_region
+					owner = {
+						is_country_type = decentralized
+					}
+				}
+				owner = {
+					save_scope_as = decentralized_native_country
+				}
+			}
+			set_state_owner = scope:decentralized_native_country			
+		}
+	}
+}

@@ -1,0 +1,38 @@
+﻿# Root = State
+on_monthly_pulse_state = {
+	on_actions = {
+		power_bloc_statue_on_action
+	}
+}
+
+power_bloc_statue_on_action = {
+    effect = {
+        if = {
+            limit = {
+                owner = { has_technology_researched = mass_communication}
+            }
+            if = {
+                limit = {
+                    sg:newspapers = {
+                        state_goods_delta > 100
+                    }
+                }
+                create_building = {
+                    building = building_power_bloc_statue
+                    level = 1
+                }
+            }
+            if = {
+                limit = {
+                    has_building = building_power_bloc_statue
+                    or = {
+                        sg:newspapers = {
+                            state_goods_delta < 0
+                        }
+                    }
+                }
+                remove_building = building_power_bloc_statue
+            }
+        }
+    }
+}

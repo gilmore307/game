@@ -1,0 +1,7 @@
+﻿INTERESTS = {
+	c:SUN ?= {
+		add_declared_interest = region_niger
+		add_declared_interest = region_zanj
+		add_declared_interest = region_arabic
+	}
+}
