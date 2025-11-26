@@ -37,3 +37,9 @@ credits.txt
 /localization/russian
 /localization/spanish
 /localization/turkish
+*.png
+map_data/province_terrains.txt
+map_data/nodes.dat
+map_data/heightmap.heightmap
+map_data/default.map
+map_data/adjacencies.csv
