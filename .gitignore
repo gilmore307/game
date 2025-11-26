@@ -43,3 +43,5 @@ map_data/nodes.dat
 map_data/heightmap.heightmap
 map_data/default.map
 map_data/adjacencies.csv
+/localization/jomini
+localization/languages.yml
